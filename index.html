@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/menu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <ul class="menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="tcommun.html">Transport en commun</a></li>
+          <li><a href="marche.html">Marche</a></li>
+          <li><a href="moto.html">Moto</a></li>
+          <li><a href="trotinette.html">Trotinette</a></li>
+          <li><a href="hover.html">Hoverboard</a></li>
+        </ul>
+      </nav>
+      <div id="myBtn">
+      <p>Calculez votre<br> empreinte carbonne</p>
+    </div>
+    </header>
+
+    <main>
+      <section >
+        <img src="img/home/ArticlesVisitesMusees2CIEL3.png" alt="accueil" />
+        <h2>MUSÉE DE LA STAS</h2>
+
+        <article class="firstPart">
+
+          <img
+            src="img/home/visitesMuses.jpg"
+            alt="des personnes dans un tram"
+          />
+          <div>
+          <h3>
+            Le lundi 12 mars nous avons visité le musée de la STAS à
+            Saint-Étienne :
+          </h3>
+          <p>
+            STAS signifie : Société de Transport de l’Agglomération Stéphanoise.
+            Saint-Étienne est une ville Minière. C’est l’une des premières
+            villes françaises à créer les premières lignes de tramway, notamment
+            entre Saint-Étienne et Andrézieux, au XIXème siècle. Lors de notre
+            visite dans le Musée à Saint-Etienne STAS, où nous nous sommes
+            justement rendus en transports en commun, nous avons été accueillis
+            par des employés du musée, ce sont des bénévoles à la retraite qui
+            étaient auparavant employés de la STAS. Ils nous ont présenté
+            l’histoire de la STAS puis nous ont fait visiter les expositions.
+            Nous avons pu rentrer dans des wagons d’anciens tram’ pour pouvoir
+            les voir de l’intérieur. Dans les plus anciens, lorsque l’on soulève
+            certains sièges, qui étaient en bois, on peut voir le sable qui est
+            déversé pour renforcer l’adhérence entre la roue et le rail, ce qui
+            existe toujours aujourd’hui même si on ne voit plus le sable ! Nous
+            avons pu également discuter avec les bénévoles qui nous ont évoqué
+            leurs souvenirs lorsqu’ils travaillaient encore à la STAS.<br />
+            <sub>Rowny et Kahim.</sub>
+          </p>
+        </div>
+        </article>
+      </section>
+      <section class="firstPart">
+        <h3>
+          MUSÉE D’ART ET D’INDUSTRIE : SAINT-ÉTIENNE, VILLE D’ESPIONNAGE
+          INDUSTRIEL ?
+        </h3>
+        <p>
+          Le 14 mars nous sommes allés au Musée d'Art et d'Industrie à
+          Saint-Étienne. Nous avons été plongés dans un voyage captivant à
+          travers l’histoire industrielle de la région, notamment la partie des
+          cycles que nous avons parcourue pour nourrir nos réflexions sur les
+          transports.
+        </p>
+        <img src="img/home/veloMusees.jpg" />
+        <p>
+          La visite guidée nous a permis de découvrir l’évolution du cycle et
+          l’importance de la production de ce mode de transport pour la ville de
+          Saint-Étienne. Nous avons pu observer de nombreux engins à deux ou 3
+          roues dont certains étaient très étonnants. Certains n’ont connu aucun
+          succès lors de leur invention, et c’est plus tard qu’ils ont rencontré
+          leur public, par exemple la dérailleur par la voix ou les vélo à
+          double pédalier.
+        </p>
+        
+          <img
+            src="img/home/VisitesMusees.jpg"
+            alt="les élèves sur une terrasse"
+          />
+          <article >
+          <p>
+            Il faut savoir que c’est un fabriquant d’armes stéphanois qui a
+            copié le vélo d’un cyclotouriste anglais et c’est ainsi que la
+            production en série a commencé dans notre région ! On a pu constater
+            que la recherche ne s’arrête pas et que les ingénieurs sont toujours
+            en quête de nouveaux matériaux, plus légers, plus écologiques, ou de
+            nouvelles formes plus performantes pour les compétitions.
+          </p>
+          <p>
+            En somme, cette visite enrichissante nous a permis de mieux
+            comprendre l’importance du vélo pour Saint-Étienne. C'était une
+            visite qui nous a appris des choses et a fait naître une certaine
+            fascination pour le progrès humain. <br>
+            <sub>Audran, Valentin, Julien.</sub>
+          </p>
+        </article>
+      </section> 
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="carbonnee">
+              <label for="electricityUsage">Consommation d'électricité (kWh) :</label>
+              <input
+              type="number"
+              min="0"
+              value="0"
+              id="electricityUsage"
+              required
+              /><br />
+
+              <label for="gasUsage">Consommation de gaz (m3) :</label>
+              <input
+              type="number"
+              min="0"
+              value="0"
+              id="gasUsage"
+              required
+              /><br />
+
+              <label for="vehicleFuelUsage">Consommation de carburant pour véhicules (litres) :</label>
+              <input
+              type="number"
+              min="0"
+              value="0"
+              id="vehicleFuelUsage"
+              required
+              /><br />
+
+              <label for="vehicleMileage">Kilométrage annuel du véhicule (km) :</label>
+              <input
+              type="number"
+              min="0"
+              value="0"
+              id="vehicleMileage"
+              required
+              /><br />
+
+              <label for="publicTransportUsage">Utilisation des transports en commun (km) :</label>
+              <input
+              type="number"
+              min="0"
+              value="0"
+              id="publicTransportUsage"
+              required
+              /><br />
+
+              <button type="submit">Calculer</button>            
+            </form>
+            <div id="result">
+    </div>
+           
+
+            </form>
+          </div>
+        
+      </div>
+    </main>
+    <script src="script/carbonnee.js"></script>
+    <script src="script/script.js"></script>
+    <script>
+      // Récupération de la modal
+var modal = document.getElementById("myModal");
+
+// Récupération du bouton qui ouvre la modal
+var btn = document.getElementById("myBtn");
+
+// Récupération du bouton de fermeture
+var span = document.getElementsByClassName("close")[0];
+
+// Quand l'utilisateur clique sur le bouton, la modal s'affiche
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Quand l'utilisateur clique sur le bouton de fermeture, la modal se ferme
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Quand l'utilisateur clique en dehors de la modal, elle se ferme
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+    </script>
+  </body>
+</html>
