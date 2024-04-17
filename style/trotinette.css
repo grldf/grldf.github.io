@@ -1,0 +1,39 @@
+body {
+  font-family: "Raleway", sans-serif;
+  background: linear-gradient(-45deg, #52eedc, #46b5ec, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #171717;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
+
+img[alt*="trotinette"] {
+  display:block;
+  height: 320px;
+  box-shadow: none;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+}
