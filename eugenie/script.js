@@ -18,4 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("menuOpen", "false");
         }
     });
+
+    // ✅ Force le rechargement du script à chaque changement de page
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            location.reload(); // Recharge la page si elle est mise en cache par le mobile
+        }
+    };
 });
+
