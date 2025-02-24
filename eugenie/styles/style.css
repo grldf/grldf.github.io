@@ -5,18 +5,92 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin: 0;
-    padding: 20px; /* ✅ Ajoute du padding pour éviter que le h1 soit collé aux bords */
+    padding: 20px;
     box-sizing: border-box;
 }
 
+/* 🌍 Fonds spécifiques pour chaque page */
+#yanis { background: url('../images/dj-de-fou.jpg') no-repeat center center/cover; }
+#nolan { background: url('../images/greench.jpg') no-repeat center center/cover; }
+#etienne { background: url('../images/lettre.jpg') no-repeat center center/cover; }
+#joan { background: url('../images/jonesi.jpg') no-repeat center center/cover; }
+#luis { background: url('../images/image-chat2.webp') no-repeat center center/cover; }
+#maxime { background: url('../images/Background.jpg') no-repeat center center/cover; }
+#malo { background: url('../images/samoens1.jpg') no-repeat center center/cover; }
+#kameron { background: url('../images/back-kameron.jpg') no-repeat center center/cover; }
 
-/* Conteneur principal */
+/* 🏗 Barre de navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* 📌 Style des liens du menu */
+nav .menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 🖱️ Effet au survol */
+nav .menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f39c12;
+}
+
+/* 🎯 Style actif (page actuelle) */
+nav .menu li a.active {
+    background: #f39c12;
+    color: black;
+    border: 2px solid white;
+}
+
+/* 📱 Menu burger : visible par défaut (petit écran) */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Cache le menu normal par défaut en mobile */
+nav .menu {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Active le menu burger */
+nav .menu.show {
+    display: flex;
+}
+
+/* 🏗 Conteneur principal */
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    margin-top: 150px;
     padding: 20px;
     border-radius: 15px;
     width: 90%;
@@ -24,7 +98,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Grille des vidéos */
+/* 🎥 Grille des vidéos */
 .video-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -32,7 +106,7 @@ body {
     margin-top: 20px;
 }
 
-/* Carte vidéo */
+/* 📺 Carte vidéo */
 .video-card {
     display: flex;
     flex-direction: column;
@@ -44,7 +118,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Style des iframes */
+/* 🖼️ Style des iframes */
 iframe {
     width: 100%;
     height: 200px;
@@ -52,29 +126,79 @@ iframe {
     border: none;
 }
 
-/* Texte explicatif */
+/* 📝 Texte explicatif */
 p {
     margin-top: 10px;
     color: white;
     font-size: 16px;
 }
-/* Titre */
+
+/* 🏷️ Titre */
 h1 {
-    font-size: clamp(1.5rem, 5vw, 3rem); /* Min: 1.5rem, Auto: 5vw, Max: 3rem */
+    font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
-    color: white;
+    color: #ffffff;
 }
 
-/* Responsive : deux colonnes en grand écran */
-@media (min-width: 768px) {
-    .video-container {
-        grid-template-columns: 1fr 1fr;
+/* 📱 MENU BURGER sur petits écrans */
+@media (max-width: 768px) {
+    nav .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+        text-align: center;
+        gap: 2vh;
+    }
+
+    nav .menu.show {
+        display: flex;
+    }
+
+    nav .menu li {
+        display: block;
+        margin: 12px 0;
+    }
+
+    nav .menu li a {
+        display: block;
+        padding: 1.5vh 3vw;
+        width: 80%;
+        text-align: center;
+        font-size: 20px;
+        border-radius: 10px;
     }
 }
 
-/* Responsive : trois colonnes en très grand écran */
+/* 💻 MENU NORMAL : disparition du menu burger */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    nav .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2vw;
+        position: static;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+/* 🖥️ VIDÉOS : affichage en 3 colonnes sur grand écran */
 @media (min-width: 1024px) {
     .video-container {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav .menu {
+        gap: 30px;
     }
 }
