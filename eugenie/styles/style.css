@@ -43,46 +43,67 @@ nav .menu li a {
     border-radius: 8px;
     transition: background 0.3s ease, color 0.3s ease;
 }
-
-/* 🖱️ Effet au survol */
-nav .menu li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #f39c12;
-}
-
-/* 🎯 Style actif (page actuelle) */
-nav .menu li a.active {
-    background: #f39c12;
-    color: black;
-    border: 2px solid white;
-}
-
-/* 📱 Menu burger : visible par défaut (petit écran) */
-.menu-toggle {
+.menu-icon {
     font-size: 30px;
     cursor: pointer;
     color: white;
     text-align: center;
+    display: block;
     padding: 10px;
+    user-select: none;
 }
-
-/* Cache le menu normal par défaut en mobile */
-nav .menu {
+#menu-toggle {
     display: none;
+}
+/* 📂 Menu caché par défaut */
+.menu {
     list-style: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+    padding: 0;
+    margin: 0;
     background: rgba(0, 0, 0, 0.8);
-    padding: 20px 0;
-    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
 }
 
-/* Active le menu burger */
-nav .menu.show {
-    display: flex;
+/* ✅ Affichage du menu quand la case est cochée */
+#menu-toggle:checked + .menu-icon + .menu {
+    max-height: 500px; /* Ajustable selon le contenu */
+}
+.menu li {
+    margin: 10px 0;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 12px 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 🎨 Effet au survol */
+.menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f39c12;
+}
+
+/* 🎯 Style du lien actif (page en cours) */
+.menu li a.active {
+    background: #f39c12; /* ✅ Fond doré */
+    color: black; /* ✅ Texte noir pour contraste */
+    border-radius: 8px; /* ✅ Coins arrondis */
+    padding: 12px 18px; /* ✅ Ajuste l’espace autour du texte */
+    font-weight: bold; /* ✅ Texte en gras */
+    border: 2px solid white; /* ✅ Bordure blanche pour bien démarquer */
+}
+
+/* 🖱️ Effet au survol même pour le lien actif */
+.menu li a.active:hover {
+    background: #ffa726; /* ✅ Légèrement plus clair au survol */
+    color: black;
 }
 
 /* 🏗 Conteneur principal */
@@ -96,6 +117,10 @@ nav .menu.show {
     width: 90%;
     max-width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#index p, #index h1 {
+    color: black;
 }
 
 /* 🎥 Grille des vidéos */
@@ -141,54 +166,24 @@ h1 {
 }
 
 /* 📱 MENU BURGER sur petits écrans */
-@media (max-width: 768px) {
-    nav .menu {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 20px 0;
-        text-align: center;
-        gap: 2vh;
-    }
 
-    nav .menu.show {
-        display: flex;
-    }
-
-    nav .menu li {
-        display: block;
-        margin: 12px 0;
-    }
-
-    nav .menu li a {
-        display: block;
-        padding: 1.5vh 3vw;
-        width: 80%;
-        text-align: center;
-        font-size: 20px;
-        border-radius: 10px;
-    }
-}
 
 /* 💻 MENU NORMAL : disparition du menu burger */
 @media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
+    .menu-icon {
+        display: none; /* Cache l'icône burger */
     }
 
-    nav .menu {
+    .menu {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 2vw;
-        position: static;
+        max-height: none;
         background: transparent;
-        padding: 0;
+    }
+
+    .menu li {
+        margin: 0 15px;
     }
 }
 
@@ -198,7 +193,4 @@ h1 {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    nav .menu {
-        gap: 30px;
-    }
 }
