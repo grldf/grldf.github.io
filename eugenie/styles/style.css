@@ -154,7 +154,7 @@ iframe {
 /* 📝 Texte explicatif */
 p {
     margin-top: 10px;
-    color: white;
+    color: black;
     font-size: 16px;
 }
 
@@ -185,12 +185,20 @@ h1 {
     .menu li {
         margin: 0 15px;
     }
+
+    p {
+        color: white;
+    }
 }
 
 /* 🖥️ VIDÉOS : affichage en 3 colonnes sur grand écran */
 @media (min-width: 1024px) {
     .video-container {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    p {
+        color: white;
     }
 
 }
